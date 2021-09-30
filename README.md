@@ -9,6 +9,7 @@ Available via: https://yhadjrabia-app.herokuapp.com/
 - Login with **Google** or **Facebook**.
 - Authentication using **JWT**.
 - Role-based dashboard.
+- Error handeling, regex...etc.
 
 ## Tech Stack: 
 
