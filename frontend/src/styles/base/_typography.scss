@@ -1,0 +1,78 @@
+//Fonts
+// /!\ HTML import in index.html should be prefered to css import to avoid font loading
+// @import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Poppins|Audiowide|Lobster");
+
+//Font types
+$special-font: "Permanent Marker";
+$regular-font: "Poppins", sans-serif;
+$secondary-font: "Audiowide";
+
+/* Fonts */
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-family: $secondary-font;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  display: flex;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+/* Various */
+
+label {
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+input {
+  font-size: 1.4rem;
+}
+
+i {
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+img {
+  cursor: pointer;
+}
+
+small {
+  font-size: 1.8rem;
+  color: $primary-yellow;
+}
+
+span {
+  cursor: pointer;
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a {
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}

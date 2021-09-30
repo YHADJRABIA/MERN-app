@@ -1,0 +1,123 @@
+.form_card {
+  position: relative;
+  background-color: $primary-gray;
+  width: 100vw;
+  //min-height: 50rem;
+  padding-top: 4rem;
+  border-radius: 5rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  @include flexCenter(column, center);
+
+  .form_title {
+    text-shadow: 0 0 $primary-black;
+    color: $primary-blue;
+    text-align: center;
+  }
+
+  & > :last-child {
+    margin-top: 2rem;
+  }
+}
+
+form {
+  @include flexCenter(column, center);
+  //min-height: 30rem;
+  margin-top: 8rem;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.form-field {
+  position: relative;
+  @include flexCenter(column-reverse, space-between, flex-start);
+  width: 18rem;
+  padding-bottom: 1rem;
+
+  i {
+    color: $primary-black;
+    position: absolute;
+    left: -18%;
+    top: 40%;
+    font-size: 1.8rem;
+  }
+  & input {
+    transition: opacity 0.3s ease-in-out;
+    font-weight: bold;
+    outline: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid $secondary-gray;
+
+    &:focus {
+      border-bottom: 2px solid black;
+    }
+
+    &:placeholder-shown + label {
+      cursor: text;
+      max-width: 78.66%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transform-origin: left bottom;
+      transform: translate(0, 2.125rem) scale(1.2);
+    }
+
+    // Placeholder's styles
+    &:focus::-webkit-input-placeholder {
+      font-weight: initial;
+      opacity: 0.9;
+    }
+
+    &:not(:placeholder-shown) + label,
+    &:focus + label {
+      transform: translate(0, 0) scale(1);
+      cursor: pointer;
+    }
+  }
+
+  & label {
+    transition: transform 0.3s ease-in-out;
+    color: $secondary-gray;
+  }
+}
+
+.form-actions {
+  @include flexCenter(column, space-around);
+  height: 12rem;
+  margin-top: 2rem;
+
+  iframe {
+    margin-top: -1rem;
+  }
+
+  a {
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $red-warning;
+    }
+  }
+}
+
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+
+.password-toggler {
+  position: absolute;
+  right: 0%;
+  top: 35%;
+}
+
+/*------------ Reponsive -----------*/
+@include respond-to("medium") {
+  .form_card {
+    width: 50rem;
+  }
+}
+@include respond-to("large") {
+}

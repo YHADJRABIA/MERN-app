@@ -1,0 +1,13 @@
+main {
+  margin-top: $nav-height;
+  min-height: 100vh;
+  @include flexCenter(column, center);
+}
+/*------------ Reponsive -----------*/
+@include respond-to("medium") {
+  main {
+    padding: 2rem;
+  }
+}
+@include respond-to("large") {
+}

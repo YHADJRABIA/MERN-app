@@ -1,0 +1,39 @@
+.hero-banner {
+  padding-top: $nav-height + 5rem;
+  @include flexCenter(column);
+  background-color: white;
+}
+
+.hero-text {
+  & > * {
+    margin: 5rem 0;
+  }
+}
+.hero-title {
+  color: black;
+  text-align: center;
+  text-shadow: 0.05rem 0.15rem black;
+}
+.hero-content {
+  text-align: left;
+  margin: 0 1.5rem;
+  line-height: 4.5rem;
+}
+
+/*------------ Reponsive -----------*/
+
+@include respond-to("medium") {
+  .hero-content {
+    width: 70rem;
+  }
+}
+@include respond-to("large") {
+  .hero-banner {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .hero-content {
+    width: 85rem;
+  }
+}

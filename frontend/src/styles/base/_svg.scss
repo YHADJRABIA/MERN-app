@@ -1,0 +1,17 @@
+.main-svg {
+  width: 26rem;
+  height: 15rem;
+}
+
+@include respond-to("medium") {
+  .main-svg {
+    width: 35rem;
+    height: 20rem;
+  }
+}
+@include respond-to("large") {
+  .main-svg {
+    width: 45rem;
+    height: 40rem;
+  }
+}

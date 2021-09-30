@@ -1,0 +1,146 @@
+.NavItems {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  background: $black-linear-gradient;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /*   transition: all 0.3s ease-in;
+  transition-property: background-color, color; */
+  height: $nav-height;
+  @include flexCenter(row, space-around);
+
+  & > * {
+    color: $primary-white;
+  }
+
+  &.active {
+    background: $background-black;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* Logo */
+.nav-logo a {
+  @include flexCenter(row, center);
+}
+
+/* Content */
+.nav-menu {
+  @include flexCenter(column, flex-start);
+  position: absolute;
+  top: $nav-height; // Height of nav
+  left: -120%;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  transition-property: left, opacity;
+  width: 100vw;
+  background-color: $background-black;
+
+  &.active {
+    background-color: $background-black;
+    opacity: 100%;
+    left: 0;
+    z-index: 999;
+  }
+
+  & > :nth-child(3n) {
+    padding-bottom: 2rem;
+  }
+}
+
+.nav-links {
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem;
+  width: 100vw;
+  display: table;
+  transition: background-color 0.3s ease-out;
+
+  &:hover {
+    background-color: $secondary-blue;
+  }
+}
+
+/* Login, Register, Logout */
+.logged-section {
+  @include flexCenter(row, center);
+  border-top: 2px solid $primary-white;
+  padding-top: 2rem;
+
+  .nav-avatar {
+    @include flexCenter(row, center);
+  }
+
+  .nav-user-avatar {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.5rem;
+  }
+
+  .nav-user-avatar-text {
+    font-family: $secondary-font;
+    text-transform: capitalize;
+  }
+}
+
+/*----------- Responsive --------------*/
+@include respond-to("medium") {
+  .nav-links-mobile {
+    display: none;
+  }
+
+  .nav-menu {
+    @include initialProperties;
+    flex-direction: row;
+    opacity: 1;
+    background-color: initial;
+
+    &.active {
+      background-color: transparent;
+    }
+
+    li a {
+      font-size: 1.4rem;
+    }
+
+    & > :nth-child(3n) {
+      padding-bottom: 0;
+      padding-right: 2rem;
+    }
+  }
+
+  .nav-links {
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    transition-property: border-radius, background-color, left;
+    width: initial;
+    &:hover {
+      background-color: $secondary-blue;
+      border-radius: 0.4rem;
+    }
+  }
+
+  .logged-section {
+    border-top: none;
+    padding-top: 0;
+    border-left: 2px solid $primary-white;
+    padding-left: 2rem;
+  }
+
+  /* Icons */
+  .fa-react {
+    margin-left: 0.25rem;
+  }
+}
+
+@include respond-to("large") {
+  .nav-menu {
+    li a {
+      font-size: initial;
+    }
+  }
+}

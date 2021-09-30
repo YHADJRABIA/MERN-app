@@ -1,0 +1,32 @@
+/* Effects and animations */
+
+// Processing cog
+
+.loading-animation {
+  display: flex;
+  align-items: center;
+  i {
+    font-size: 1.6rem;
+    margin-right: 1rem;
+  }
+}
+
+// Various animations
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

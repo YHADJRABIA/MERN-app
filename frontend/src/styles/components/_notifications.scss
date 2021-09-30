@@ -1,0 +1,29 @@
+.form-suggestion {
+  margin-bottom: 2rem;
+  letter-spacing: 0.1rem;
+  a {
+    color: $secondary-blue;
+    font-weight: bold;
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+}
+
+.Toastify__toast-body {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.Toastify__toast-container--top-left,
+.Toastify__toast-container--top-right,
+.Toastify__toast-container--top-center {
+  top: $nav-height + 1rem;
+}
+
+/*------------ Reponsive -----------*/
+@include respond-to("medium") {
+}
+@include respond-to("large") {
+}

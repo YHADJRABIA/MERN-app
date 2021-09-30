@@ -1,0 +1,54 @@
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem 2.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  transition: all 0.3s ease-in-out;
+  color: $primary-white;
+  display: inline-block;
+  position: relative;
+
+  /*   &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+    &::after {
+      transform: scale(1.4, 1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  } */
+
+  &:disabled {
+    opacity: 0.2;
+  }
+}
+
+.primary-button {
+  background-color: $primary-blue;
+  color: $primary-white;
+  &:hover {
+    background-color: $secondary-blue;
+  }
+}
+
+.secondary-button {
+  background-color: $primary-green;
+  color: $primary-white;
+  &:hover {
+    background-color: $secondary-green;
+  }
+}
+
+.go-back button {
+  @include flexCenter(row);
+  & > * {
+    margin: 0 0.8rem;
+  }
+}

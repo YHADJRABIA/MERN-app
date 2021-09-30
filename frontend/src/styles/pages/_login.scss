@@ -1,0 +1,12 @@
+.login-alternatives {
+  @include flexCenter(column);
+  & > * {
+    margin: 1rem 0;
+  }
+}
+
+/*------------ Reponsive -----------*/
+@include respond-to("medium") {
+}
+@include respond-to("large") {
+}
