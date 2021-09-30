@@ -1,0 +1,122 @@
+.profile-page {
+  @include flexCenter(row, center, flex-start);
+}
+
+.profile-page-user {
+  @include flexCenter(column);
+  & > :first-child,
+  & > :last-child {
+    margin: 5rem 0;
+  }
+  & button:last-of-type {
+    margin-top: 2rem;
+  }
+  .profile-type {
+    //text-align: center;
+    //margin: 2.5rem 0;
+  }
+  .profile-page-avatar {
+    @include flexCenter(column);
+    width: 15rem;
+    height: 15rem;
+    position: relative;
+    overflow: hidden;
+    margin: 1.5rem auto;
+    border: 1px solid $secondary-white;
+    border-radius: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    span {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      height: 50%;
+      width: 100%;
+      background-color: #fff8;
+      text-align: center;
+      transition: bottom 0.3s ease-in-out;
+      & > * {
+        cursor: pointer;
+      }
+    }
+    &:hover span {
+      bottom: -10%;
+    }
+
+    #avatar-upload {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+  }
+
+  .profile-warning {
+    @include flexCenter(row);
+    padding: 0 1rem;
+    text-align: center;
+    i {
+      color: $red-warning;
+      cursor: auto;
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.profile-page-list {
+  @include flexCenter(column);
+  width: 80%;
+  & > :first-child {
+    margin: 5rem 0;
+  }
+  .profile-page-table {
+    & .fa-check {
+      cursor: auto;
+      color: $green-valid;
+    }
+    & .fa-times {
+      cursor: auto;
+      color: $red-warning;
+    }
+    & .fa-edit {
+      background: whitesmoke;
+      padding: 0.7rem;
+      color: #555;
+      font-size: 1rem;
+    }
+    & .fa-trash-alt {
+      background: red;
+      padding: 0.7rem;
+      color: white;
+      font-size: 1rem;
+      margin-left: 0.7rem;
+    }
+  }
+}
+
+.edit-user-page {
+  @include flexCenter(column, center, flex-start);
+  & > :first-child {
+    margin-bottom: 5rem;
+  }
+}
+
+/*-------------- Responsive --------------*/
+
+@include respond-to("medium") {
+  .profile-page {
+    //flex-direction: column;
+  }
+  .profile-page-list {
+    width: auto;
+  }
+}
+@include respond-to("large") {
+}
