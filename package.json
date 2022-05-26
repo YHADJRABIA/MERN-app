@@ -29,7 +29,7 @@
     "googleapis": "^76.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.4",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "nodemailer": "^6.6.3"
   },
   "devDependencies": {
